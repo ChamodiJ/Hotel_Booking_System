@@ -54,7 +54,6 @@ const Navbar = () => {
           : "py-4 md:py-6"
       }`}
     >
-      {/* Logo */}
       <Link to="/">
         <img
           src={assets.logo}
@@ -63,7 +62,6 @@ const Navbar = () => {
         />
       </Link>
 
-      {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
           <Link
@@ -94,7 +92,6 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
         <img
           src={assets.searchIcon}
@@ -102,17 +99,8 @@ const Navbar = () => {
           className={`${isScrolled ? "invert " : ""} h-7 transition-all duration-500`}
         />
 
-        {/* FIXED LOGIN + USERBUTTON */}
         {user ? (
-          <UserButton afterSignOutUrl="/">
-            <UserButton.MenuItems>
-              <UserButton.Action
-                label="My Bookings"
-                labelIcon={<BookIcon />}
-                onClick={() => navigate("/my-bookings")}
-              />
-            </UserButton.MenuItems>
-          </UserButton>
+          <UserButton afterSignOutUrl="/" />
         ) : (
           <button
             onClick={openSignIn}
@@ -125,7 +113,6 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile Menu Button */}
       <div className="flex items-center gap-3 md:hidden">
         <img
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -135,7 +122,6 @@ const Navbar = () => {
         />
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
