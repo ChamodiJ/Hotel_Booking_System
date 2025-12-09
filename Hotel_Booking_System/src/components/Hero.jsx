@@ -10,25 +10,28 @@ const Hero = () => {
 
       {/* Content */}
       <p className='bg-[#49B9FF]/50 px-3.5 py-1 rounded-full mt-20 relative z-10'>
-        Where Comfort Meets Luxury</p>
+        Where Comfort Meets Luxury
+      </p>
 
-      <h1 className='relative z-10 font-playfairc text-2xl md:text-5xl md:text-[56px] md:leading-[56px] font-bold md:font-extrabold max-w-xl mt-8'>
-        Explore Your Dream Destination</h1>
+      <h1 className='relative z-10 font-playfair text-2xl md:text-5xl md:text-[56px] md:leading-[56px] font-bold md:font-extrabold max-w-xl mt-8'>
+        Explore Your Dream Destination
+      </h1>
 
-      <p className='relative z-10 max-w-130 mt-2 text-sm md:text-base'>
-        Indulge in exceptional service and refined living. Begin your unforgettable stay today.</p>
+      <p className='relative z-10 max-w-xl mt-2 text-sm md:text-base'>
+        Indulge in exceptional service and refined living. Begin your unforgettable stay today.
+      </p>
 
-      {/* FORM (relative added) */}
+      {/* FORM */}
       <form className='relative z-10 bg-white text-gray-500 rounded-lg px-6 py-4 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto mt-6'>
 
         {/* Destination */}
         <div>
           <div className='flex items-center gap-2'>
             <img src={assets.calenderIcon} alt="" className='h-4' />
-            <label>Destination</label>
+            <label htmlFor="destination">Destination</label>
           </div>
 
-          <select className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none w-full">
+          <select id="destination" className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none w-full">
             <option value="">Select Destination</option>
             {cities.map((city, index) => (
               <option key={index} value={city}>{city}</option>
@@ -70,7 +73,7 @@ const Hero = () => {
             max={4}
             id="guests"
             type="number"
-            className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none max-w-16"
+            className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none w-16"
             placeholder="0"
           />
         </div>

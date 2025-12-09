@@ -5,16 +5,14 @@ import ExclusiveOffers from '../components/ExclusiveOffers';
 import Testimonial from '../components/Testimonial';
 import NewsLetter from '../components/NewsLetter';
 
-
 const Home = () => {
   return (
     <div>
       <Hero />
-      <FeaturedDestination/>
-      <ExclusiveOffers/>
-      <Testimonial/>
-      <NewsLetter/>
-    
+      <FeaturedDestination />
+      <ExclusiveOffers />
+      <Testimonial />
+      <NewsLetter />
     </div>
   );
 }
