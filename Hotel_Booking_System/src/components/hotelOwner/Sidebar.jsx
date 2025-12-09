@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { assets } from '../assets/assets'   // ✅ Added missing import
+import { assets } from "../../assets/assets";
 
-const SideBar = () => {
+const Sidebar = () => {
 
     const sidebarLinks = [
         { name: "Dashboard", path: "/owner", icon: assets.dashboardIcon },
@@ -16,7 +16,7 @@ const SideBar = () => {
                 <NavLink
                     to={item.path}
                     key={index}
-                    end={item.path === "/owner"}   // ✅ Fixed incorrect end prop
+                    end={item.path === "/owner"}   /* FIXED: comment wrapped correctly */
                     className={({ isActive }) =>
                         `flex items-center py-3 px-4 md:px-8 gap-3 ${
                             isActive
@@ -33,4 +33,4 @@ const SideBar = () => {
     )
 }
 
-export default SideBar;
+export default Sidebar;
