@@ -32,7 +32,7 @@ const RoomDetails = () => {
 
       {/*Room Rating*/}
       <div className='flex items-center gap-2 mt-2'>
-        <StarRating /> 
+        <StarRating />
         <p className='text-sm ml-2'>200+ reviews</p>
       </div>
 
@@ -89,20 +89,21 @@ const RoomDetails = () => {
             <input type="date" id='checkInDate' className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
           </div>
 
-          <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>
+          <div className='w-px h-16 bg-gray-300/70 max-md:hidden'></div>
 
           <div className='flex flex-col'>
             <label htmlFor="checkOutDate" className='font-medium'>Check-Out</label>
             <input type="date" id='checkOutDate' className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
           </div>
 
-          <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>
+          <div className='w-px h-16 bg-gray-300/70 max-md:hidden'></div>
 
           <div className='flex flex-col'>
             <label htmlFor="guests" className='font-medium'>Guests</label>
-            <input type="number" id='guests' className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
+            <input type="number" id='guests' className='w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
           </div>
         </div>
+
         <button type='submit' className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:mt-6 md:px-8 py-3 md:py-4 text-base cursor-pointer'>
           Check Availability
         </button>
@@ -136,7 +137,7 @@ const RoomDetails = () => {
       {/*Hosted by*/}
       <div className='flex flex-col items-start gap-4'>
         <div className='flex gap-4'>
-          <img src={room.hotel.owner.image} alt="Host" className='h-14 w-14 md:h-18 md:w-18 rounded-full' />
+          <img src={room.hotel.owner.image} alt="Host" className='h-14 w-14 md:h-20 md:w-20 rounded-full' />
           <div className='flex flex-col'>
             <p className='text-lg md:text-xl font-semibold'>Hosted by {room.hotel.name}</p>
             <div className='flex flex-row items-center gap-2'>

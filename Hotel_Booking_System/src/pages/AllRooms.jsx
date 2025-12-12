@@ -6,7 +6,11 @@ import StarRating from '../components/StarRating';
 const CheckBox = ({ label, selected = false, onChange = () => {} }) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-      <input type="checkbox" checked={selected} onChange={(e) => onChange(e.target.checked, label)} />
+      <input
+        type="checkbox"
+        checked={selected}
+        onChange={(e) => onChange(e.target.checked, label)}
+      />
       <span className='font-light select-none'>{label}</span>
     </label>
   )
@@ -15,7 +19,12 @@ const CheckBox = ({ label, selected = false, onChange = () => {} }) => {
 const RadioButton = ({ label, selected = false, onChange = () => {} }) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-      <input type="radio" name="sortOption" checked={selected} onChange={() => onChange(label)} />
+      <input
+        type="radio"
+        name="sortOption"
+        checked={selected}
+        onChange={() => onChange(label)}
+      />
       <span className='font-light select-none'>{label}</span>
     </label>
   )
@@ -65,7 +74,7 @@ const AllRooms = () => {
             className='flex flex-col md:flex-row items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0'
           >
             <img
-              onClick={() => { navigate(`/rooms/${room._id}`); scrollTo(0, 0); }}
+              onClick={() => { navigate(`/rooms/${room._id}`); window.scrollTo(0, 0); }}
               src={room.images[0]}
               alt='hotel-img'
               className='max-h-[260px] md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'
@@ -75,7 +84,7 @@ const AllRooms = () => {
               <p className='text-gray-500'>{room.hotel.city}</p>
 
               <p
-                onClick={() => { navigate(`/rooms/${room._id}`); scrollTo(0, 0); }}
+                onClick={() => { navigate(`/rooms/${room._id}`); window.scrollTo(0, 0); }}
                 className='text-gray-800 text-3xl font-playfair cursor-pointer'
               >
                 {room.hotel.name}
@@ -148,4 +157,4 @@ const AllRooms = () => {
   )
 }
 
-export default AllRooms
+export default AllRooms;
