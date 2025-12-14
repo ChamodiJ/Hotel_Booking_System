@@ -2,6 +2,10 @@ import express from 'express'
 import "dotenv/config";
 import cors from "cors";
 import { log } from 'console';
+import { connect } from 'http2';
+import connectDB from './configs/db.js';
+
+connectDB();
 
 const app =express()
 app.use(cors())
