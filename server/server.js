@@ -1,18 +1,29 @@
-import express from 'express'
-import "dotenv/config";
-import cors from "cors";
-import { log } from 'console';
-import { connect } from 'http2';
-import connectDB from './configs/db.js';
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-connectDB();
+dotenv.config();
 
-const app =express()
-app.use(cors())
-
-app.get('/',(req,res) => res.send("API is working"))
-
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, ()=> console.log(`Server running on port ${PORT}
-    `));
+// ✅ Correct middleware
+app.use(express.json());
+
+// Test route
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
+// MongoDB connection
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
