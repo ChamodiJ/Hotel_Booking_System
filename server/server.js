@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import clerkWebhooks from "./controllers/clerkWebhooks.js";
 import userRouter from "./routes/userRouters.js";
+import hotelRouter from "./routes/hotelRoutes.js";
 
 dotenv.config(); // Load .env variables
 
@@ -22,6 +23,7 @@ app.use('/api/clerk' , clerkWebhooks)
 // Test route
 app.get('/', (req, res) => res.send("API is working"));
 app.use('/api/user',userRouter);
+app.use('/api/hotels',hotelRouter);
 
 // MongoDB connection
 const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://admin:123@cluster0.fxaje3d.mongodb.net/studentDB?retryWrites=true&w=majority";
